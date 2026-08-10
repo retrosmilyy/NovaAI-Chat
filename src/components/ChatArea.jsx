@@ -1,5 +1,6 @@
 import Hero from "./Hero"
 import Message from "./Message"
+import InputBar from "./InputBar"
 
 function ChatArea({ messages, onSuggestionClick }) {
   const isEmpty = messages.length === 0
@@ -15,6 +16,7 @@ function ChatArea({ messages, onSuggestionClick }) {
             })}
           </div>
         )}
+        <InputBar />
       </div>
     </div>
   )
