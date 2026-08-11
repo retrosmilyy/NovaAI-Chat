@@ -1,6 +1,6 @@
 function Topbar() {
   return (
-    <div className="flex items-center justify-between px-4 py-3">
+    <div className="flex justify-end items-center px-4 py-3">
       <button
         type="button"
         className="rounded-lg px-2 py-1 font-semibold text-zinc-500 hover:bg-zinc-800"
