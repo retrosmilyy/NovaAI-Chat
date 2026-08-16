@@ -2,6 +2,7 @@ import { useState } from "react"
 import Topbar from "./components/Topbar.jsx"
 import ChatArea from "./components/ChatArea.jsx"
 import InputBar from "./components/InputBar.jsx"
+import Sidebar from "./components/Sidebar.jsx"
 
 const can_reply =
   "Here's a first pass - happy to go deeper on any part of this."
@@ -24,24 +25,28 @@ function App() {
   }
 
   const handleSend = () => {
-    if (input.trim()) return
+    if (!input.trim()) return
     sendMessage(input)
     setInput("")
   }
 
   return (
-    <div className="flex h-screen flex-col bg-zinc-950">
-      <Topbar />
+    <div className="flex h-screen bg-zinc-950">
+      <Sidebar />
 
-      <div
-        className={`flex flex-1 flex-col ${isEmpty ? "justify-center" : ""}`}
-      >
-        <ChatArea
-          messages={messages}
-          isTyping={isTyping}
-          onSuggestionClick={sendMessage}
-        />
-        <InputBar value={input} onChange={setInput} onSend={handleSend} />
+      <div className="flex flex-1 flex-col">
+        <Topbar />
+
+        <div
+          className={`flex flex-1 flex-col ${isEmpty ? "justify-center" : ""}`}
+        >
+          <ChatArea
+            messages={messages}
+            isTyping={isTyping}
+            onSuggestionClick={sendMessage}
+          />
+          <InputBar value={input} onChange={setInput} onSend={handleSend} />
+        </div>
       </div>
     </div>
   )

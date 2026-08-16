@@ -18,7 +18,7 @@ function Hero({ onSuggestionClick }) {
           <button
             key={s.title}
             onClick={() => onSuggestionClick(`${s.title} - ${s.body}`)}
-            className="rounded-2xl border border-zinc-800 bg-zinc-900 p-4 text-left text-sm text-zinc-400 hover:bg-zinc-800"
+            className="rounded-2xl border border-zinc-800 pb-5 bg-zinc-900 p-4 text-left text-sm text-zinc-400 hover:bg-zinc-800"
           >
             <span className="mb-2 block font-medium text-zinc-100">
               {s.title}
